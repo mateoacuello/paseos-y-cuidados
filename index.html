@@ -1773,8 +1773,8 @@ Estuve viendo tu página y quería consultar disponibilidad para:
             rates: { ...DEFAULT_SETTINGS.rates },
             discounts: { ...DEFAULT_SETTINGS.discounts },
             design: { ...DEFAULT_SETTINGS.design },
-            photos: DEFAULT_SETTINGS.photos.map(p => ({ ...p })),
-            reviews: DEFAULT_SETTINGS.reviews.map(r => ({ ...r })),
+            photos: (DEFAULT_SETTINGS.photos || []).map(p => ({ ...p })),
+            reviews: (DEFAULT_SETTINGS.reviews || []).map(r => ({ ...r })),
             texts: {},
             serviceNames: {
                 walk30: 'Paseo 30 min',
@@ -2307,8 +2307,8 @@ Estuve viendo tu página y quería consultar disponibilidad para:
             state.rates = { ...DEFAULT_SETTINGS.rates };
             state.discounts = { ...DEFAULT_SETTINGS.discounts };
             state.design = { ...DEFAULT_SETTINGS.design };
-            state.photos = DEFAULT_SETTINGS.photos.map(p => ({ ...p }));
-            state.reviews = DEFAULT_SETTINGS.reviews.map(r => ({ ...r }));
+            state.photos = (DEFAULT_SETTINGS.photos || []).map(p => ({ ...p }));
+            state.reviews = (DEFAULT_SETTINGS.reviews || []).map(r => ({ ...r }));
             state.texts = {};
             try {
                 localStorage.removeItem(STORAGE_KEY);
