@@ -2145,7 +2145,7 @@ Estuve viendo tu página y quería consultar disponibilidad para:
             if (wpIn) wpIn.value = state.design.waPriceNote !== undefined ? state.design.waPriceNote : DEFAULT_SETTINGS.design.waPriceNote;
         }
 
-        const REVIEWS_API_URL = 'https://script.google.com/macros/s/AKfycbxPAwgGMInrQxWzgzRPEQKlxqJWnVKMFNQcJTwKXsRJD7F3_qdQBz8c0xZ8UJCAf840/exec';
+        const REVIEWS_API_URL = 'https://script.google.com/macros/s/AKfycbz_Pj6lhAi8aDb980KdpLjzP23ZLa5v8RQwqw308NC68RrUtjl9pO1UnsLHhfMU9Avl/exec';
 
         let _cloudConfigSyncTimer = null;
         let _isApplyingCloudConfig = false;
@@ -2166,7 +2166,8 @@ Estuve viendo tu página y quería consultar disponibilidad para:
                 discounts: state.discounts,
                 design: state.design,
                 texts: state.texts,
-                photos: safePhotos
+                photos: safePhotos,
+                reviews: state.reviews || []
             };
         }
 
@@ -2176,13 +2177,10 @@ Estuve viendo tu página y quería consultar disponibilidad para:
                 await fetch(REVIEWS_API_URL, {
                     method: 'POST',
                     headers: { 'Content-Type': 'text/plain;charset=utf-8' },
-                    body: JSON.stringify({
-                        type: 'config',
-                        data: buildCloudConfigPayload()
-                    })
+                    body: JSON.stringify(buildCloudConfigPayload())
                 });
                 if (showFeedback) {
-                    showToast('Cambios guardados y sincronizados en la nube');
+                    showToast('Cambios guardados y sincronizados en vivo');
                 }
             } catch (err) {
                 console.error('Error sincronizando configuración con la nube:', err);
@@ -2202,9 +2200,9 @@ Estuve viendo tu página y quería consultar disponibilidad para:
 
         async function loadConfigFromCloud() {
             try {
-                const res = await fetch(`${REVIEWS_API_URL}?mode=config&t=${Date.now()}`);
+                const res = await fetch(`${REVIEWS_API_URL}?t=${Date.now()}`);
                 const cloudMap = await res.json();
-                if (!cloudMap || typeof cloudMap !== 'object' || Object.keys(cloudMap).length === 0) {
+                if (!cloudMap || typeof cloudMap !== 'object' || cloudMap.status === 'empty' || Object.keys(cloudMap).length === 0) {
                     return;
                 }
 
@@ -2225,6 +2223,7 @@ Estuve viendo tu página y quería consultar disponibilidad para:
                 const cloudDesign = parseField(cloudMap.design, null);
                 const cloudTexts = parseField(cloudMap.texts, null);
                 const cloudPhotos = parseField(cloudMap.photos, null);
+                const cloudReviews = parseField(cloudMap.reviews, null);
 
                 if (cloudRates && typeof cloudRates === 'object') {
                     Object.assign(state.rates, cloudRates);
@@ -2238,11 +2237,11 @@ Estuve viendo tu página y quería consultar disponibilidad para:
                 if (cloudTexts && typeof cloudTexts === 'object') {
                     state.texts = { ...state.texts, ...cloudTexts };
                 }
-                if (Array.isArray(cloudPhotos) && cloudPhotos.length > 0) {
-                    const hasLocalDataUrls = Array.isArray(state.photos) && state.photos.some(p => typeof p.url === 'string' && p.url.startsWith('data:image/'));
-                    if (!hasLocalDataUrls) {
-                        state.photos = cloudPhotos;
-                    }
+                if (Array.isArray(cloudPhotos)) {
+                    state.photos = cloudPhotos;
+                }
+                if (Array.isArray(cloudReviews)) {
+                    state.reviews = cloudReviews;
                 }
 
                 localStorage.setItem(STORAGE_KEY, JSON.stringify({
@@ -3504,25 +3503,6 @@ Estuve viendo tu página y quería consultar disponibilidad para:
             if (lbl) lbl.textContent = currentPubStars === 1 ? '1 estrella' : `${currentPubStars} estrellas`;
         }
 
-        async function loadReviewsFromCloud() {
-            try {
-                const res = await fetch(`${REVIEWS_API_URL}?t=${Date.now()}`);
-                const data = await res.json();
-                if (Array.isArray(data)) {
-                    state.reviews = data.map(r => ({
-                        id: r.id || ('r-' + Date.now()),
-                        author: r.name || 'Vecino',
-                        stars: Number(r.rating) || 5,
-                        service: r.pet || 'Vecino de Luján de Cuyo',
-                        text: r.text || ''
-                    }));
-                    renderPhotosAndReviews();
-                }
-            } catch (err) {
-                console.error('Error cargando comentarios:', err);
-            }
-        }
-
         async function submitClientReview(e) {
             e.preventDefault();
             const authorEl = document.getElementById('pub-rev-author');
@@ -3551,16 +3531,15 @@ Estuve viendo tu página y quería consultar disponibilidad para:
             showToast('¡Gracias! Publicando tu comentario...');
 
             try {
-                await fetch(REVIEWS_API_URL, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'text/plain;charset=utf-8' },
-                    body: JSON.stringify({
-                        name: author,
-                        pet: service,
-                        rating: newReview.stars,
-                        text: text
-                    })
-                });
+                localStorage.setItem(STORAGE_KEY, JSON.stringify({
+                    rates: state.rates,
+                    discounts: state.discounts,
+                    design: state.design,
+                    photos: state.photos,
+                    reviews: state.reviews,
+                    texts: state.texts
+                }));
+                await pushConfigToCloud(false);
                 showToast('¡Listo! Tu comentario quedó publicado para todos');
             } catch (err) {
                 console.error('Error guardando comentario:', err);
@@ -3572,14 +3551,14 @@ Estuve viendo tu página y quería consultar disponibilidad para:
             state.reviews = state.reviews.filter(r => r.id !== id);
             saveAllSettings();
             renderPhotosAndReviews();
-            showToast('Para borrarlo para todos, eliminá la fila en tu Google Sheets');
+            showToast('Comentario eliminado en vivo para todos');
         }
 
         function clearAllReviews() {
             state.reviews = [];
             saveAllSettings();
             renderPhotosAndReviews();
-            showToast('Para vaciarlos para todos, borrá las filas en tu Google Sheets');
+            showToast('Todos los comentarios fueron eliminados en vivo');
         }
 
         function toggleFaqItem(num) {
@@ -3606,7 +3585,6 @@ Estuve viendo tu página y quería consultar disponibilidad para:
             bindEditableListeners();
             updateBaseRates(true);
             renderPhotosAndReviews();
-            loadReviewsFromCloud();
             loadConfigFromCloud();
             if (window.lucide && typeof window.lucide.createIcons === 'function') { window.lucide.createIcons(); }
             calculateQuote();
