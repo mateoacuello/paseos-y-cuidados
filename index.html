@@ -2161,10 +2161,15 @@ Estuve viendo tu página y quería consultar disponibilidad para:
                 };
             });
 
+            const safeDesign = { ...state.design };
+            if (typeof safeDesign.heroPhotoUrl === 'string' && safeDesign.heroPhotoUrl.startsWith('data:image/') && safeDesign.heroPhotoUrl.length > 35000) {
+                safeDesign.heroPhotoUrl = '';
+            }
+
             return {
                 rates: state.rates,
                 discounts: state.discounts,
-                design: state.design,
+                design: safeDesign,
                 texts: state.texts,
                 photos: safePhotos,
                 reviews: state.reviews || []
@@ -2199,6 +2204,10 @@ Estuve viendo tu página y quería consultar disponibilidad para:
         }
 
         async function loadConfigFromCloud() {
+            if (_cloudConfigSyncTimer) {
+                clearTimeout(_cloudConfigSyncTimer);
+                _cloudConfigSyncTimer = null;
+            }
             try {
                 const res = await fetch(`${REVIEWS_API_URL}?t=${Date.now()}`);
                 const cloudMap = await res.json();
@@ -2397,7 +2406,7 @@ Estuve viendo tu página y quería consultar disponibilidad para:
             state.discounts.promoTarget = document.getElementById('disc-promo-target').value || 'all';
             state.discounts.promoLabel = document.getElementById('disc-promo-label').value.trim() || 'Promo';
 
-            saveAllSettings();
+            if (!silent) saveAllSettings();
 
             // Update badges on calculator cards & service cards
             document.getElementById('badge-walk30').textContent = formatARS(state.rates.walk30);
