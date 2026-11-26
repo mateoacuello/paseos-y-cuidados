@@ -2,7 +2,7 @@
 <html lang="es" class="scroll-smooth" style="--brand-50: 253 242 236; --brand-100: 251 227 213; --brand-200: 246 197 170; --brand-400: 234 140 99; --brand-500: 224 109 59; --brand-600: 224 109 59; --brand-700: 201 90 43; --brand-800: 167 72 32; --brand-900: 133 56 24; --brand-hex-500: #E06D3B; --brand-hex-600: #E06D3B; --page-bg: #F7F3EB; --page-font: 'Inter Tight', sans-serif;"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Paseo y Cuidado de Mascotas en Luján de Cuyo</title>
+    <title>Mateo | Paseo y Cuidado de Mascotas en Luján de Cuyo</title>
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&amp;family=Inter:wght@300;400;500;600;700;800&amp;family=Inter+Tight:wght@300;400;500;600;700;800&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
     <style id="theme-vars">
@@ -67,7 +67,7 @@
     <!-- Toast Notification Container -->
     <div id="toast" class="fixed bottom-20 right-5 z-50 transform transition-all duration-300 pointer-events-none bg-[#1B4332] text-white px-5 py-3.5 rounded-xl shadow-xl flex items-center gap-3 border border-[#C7C0B3]/30 translate-y-24 opacity-0">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="check-circle-2" class="lucide lucide-check-circle-2 w-5 h-5 text-emerald-400 shrink-0"><circle cx="12" cy="12" r="10"></circle><path d="m9 12 2 2 4-4"></path></svg>
-        <span id="toast-msg" class="text-sm font-medium">Acceso concedido al Modo Gestión</span>
+        <span id="toast-msg" class="text-sm font-medium">Textos guardados en la página</span>
     </div>
 
     <!-- Floating Quick WhatsApp Button for Visitors -->
@@ -94,7 +94,7 @@
                 <div onclick="secretLogoTap()" title="Inicio" class="w-9 h-9 rounded-xl bg-[#1B4332] flex items-center justify-center text-white cursor-pointer select-none">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="dog" class="lucide lucide-dog w-5 h-5 text-[#E06D3B]"><path d="M11.25 16.25h1.5L12 17z"></path><path d="M16 14v.5"></path><path d="M4.42 11.247A13.152 13.152 0 0 0 4 14.556C4 18.728 7.582 21 12 21s8-2.272 8-6.444a11.702 11.702 0 0 0-.493-3.309"></path><path d="M8 14v.5"></path><path d="M8.5 8.5c-.384 1.05-1.083 2.028-2.344 2.5-1.931.722-3.576-.297-3.656-1-.113-.994 1.177-6.53 4-7 1.923-.321 3.651.845 3.651 2.235A7.497 7.497 0 0 1 14 5.277c0-1.39 1.844-2.598 3.767-2.277 2.823.47 4.113 6.006 4 7-.08.703-1.725 1.722-3.656 1-1.261-.472-1.855-1.45-2.239-2.5"></path></svg>
                 </div>
-                <span id="txt-brand-name" data-editable="true" class="font-extrabold text-lg tracking-tight text-[#1B4332]">Paseos y Cuidados</span>
+                <span id="txt-brand-name" data-editable="true" class="font-extrabold text-lg tracking-tight text-[#1B4332]">Mateo</span>
                 <span id="txt-brand-city" data-editable="true" class="hidden">Luján de Cuyo</span>
             </div>
 
@@ -1029,11 +1029,11 @@
                         <span id="extra-pet-label" class="text-xs text-emerald-700 font-semibold bg-emerald-50 px-2.5 py-0.5 rounded-lg">1° perro 100% · -30% en perro extra (abona 70%)</span>
                     </div>
                     <div class="grid grid-cols-3 gap-3">
-                        <button type="button" onclick="setPets(1)" id="pet-1" class="pet-btn py-2.5 px-3 rounded-xl border-2 border-slate-200 font-semibold text-sm text-slate-600 hover:border-slate-300 flex flex-col items-center justify-center">
+                        <button type="button" onclick="setPets(1)" id="pet-1" class="pet-btn py-2.5 px-3 rounded-xl border-2 border-brand-600 bg-emerald-50/40 font-semibold text-sm text-[#1B4332] flex flex-col items-center justify-center">
                             <span>1 Perro</span>
                             <span id="txt-calc-pet1-sub" data-editable="true" class="text-[10px] font-medium text-slate-500 mt-0.5">Tarifa base (100%)</span>
                         </button>
-                        <button type="button" onclick="setPets(2)" id="pet-2" class="pet-btn py-2.5 px-3 rounded-xl border-2 border-brand-600 bg-emerald-50/40 font-semibold text-sm text-[#1B4332] flex flex-col items-center justify-center">
+                        <button type="button" onclick="setPets(2)" id="pet-2" class="pet-btn py-2.5 px-3 rounded-xl border-2 border-slate-200 font-semibold text-sm text-slate-600 hover:border-slate-300 flex flex-col items-center justify-center">
                             <span>2 Perros</span>
                             <span id="pet-2-sub" class="text-[10px] font-semibold text-brand-700 mt-0.5">-30% en perro extra (abona 70%)</span>
                         </button>
@@ -1070,7 +1070,7 @@
                             <span id="badge-other-lujan" data-editable="true" class="text-[11px] font-bold text-amber-800 bg-amber-100 px-2 py-0.5 rounded-lg self-start">A cotizar según dirección</span>
                         </button>
 
-                        <button type="button" onclick="setZone('out')" id="zone-out" class="text-left p-3.5 rounded-xl border-2 border-slate-200 hover:border-rose-300 transition-all flex flex-col justify-between gap-2">
+                        <button type="button" onclick="setZone('out')" id="zone-out" class="text-left p-3.5 rounded-xl border-2 border-slate-200 hover:border-slate-300 transition-all flex flex-col justify-between gap-2">
                             <div>
                                 <div id="txt-calc-z3-t" data-editable="true" class="font-bold text-[#1B4332] text-xs sm:text-sm">Fuera de Luján / +15 min</div>
                                 <div id="txt-calc-z3-d" data-editable="true" class="text-[11px] text-slate-500 mt-0.5">Ciudad, otros deptos o zonas alejadas</div>
@@ -1080,13 +1080,13 @@
                     </div>
 
                     <!-- Notice when "Otro barrio de Luján" is selected -->
-                    <div id="other-lujan-notice" class="hidden mt-3 bg-amber-50 border border-amber-200 text-amber-900 rounded-2xl p-3.5 text-xs leading-relaxed flex items-start gap-2.5">
+                    <div id="other-lujan-notice" class="mt-3 bg-amber-50 border border-amber-200 text-amber-900 rounded-2xl p-3.5 text-xs leading-relaxed flex items-start gap-2.5 hidden">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="info" class="lucide lucide-info w-4 h-4 text-amber-600 shrink-0 mt-0.5"><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4"></path><path d="M12 8h.01"></path></svg>
                         <div id="other-lujan-notice-text">Enviá tu dirección exacta por WhatsApp para cotizar el adicional por traslado.</div>
                     </div>
 
                     <!-- Out of Zone Alert Banner -->
-                    <div id="out-of-zone-alert" class="hidden mt-3 bg-rose-50 border border-rose-200 text-rose-900 rounded-2xl p-4 text-xs leading-relaxed">
+                    <div id="out-of-zone-alert" class="mt-3 bg-rose-50 border border-rose-200 text-rose-900 rounded-2xl p-4 text-xs leading-relaxed hidden">
                         <div class="font-bold text-rose-800 flex items-center gap-1.5 text-sm mb-1">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="map-pin-off" class="lucide lucide-map-pin-off w-4 h-4 text-rose-600 shrink-0"><path d="M12.75 7.09a3 3 0 0 1 2.16 2.16"></path><path d="M17.072 17.072c-1.634 2.17-3.527 3.912-4.471 4.727a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 1.432-4.568"></path><path d="m2 2 20 20"></path><path d="M8.475 2.818A8 8 0 0 1 20 10c0 1.183-.31 2.377-.81 3.533"></path><path d="M9.13 9.13a3 3 0 0 0 3.74 3.74"></path></svg>
                             <span id="out-of-zone-title" data-editable="true">Zona fuera de cobertura</span>
@@ -1118,11 +1118,11 @@
                             <span id="multivisit-badge" class="hidden text-xs font-medium text-emerald-700 bg-emerald-50 px-2.5 py-0.5 rounded-lg"></span>
                         </div>
                         <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
-                            <button type="button" onclick="setVisitsPerDay(1)" id="vpd-1" class="text-left p-3 rounded-xl border-2 border-slate-200 hover:border-slate-300 transition-all">
+                            <button type="button" onclick="setVisitsPerDay(1)" id="vpd-1" class="text-left p-3 rounded-xl border-2 border-brand-600 bg-emerald-50/40 transition-all">
                                 <div class="font-bold text-[#1B4332] text-xs sm:text-sm">1 visita / día</div>
                                 <div id="txt-calc-vpd1-d" data-editable="true" class="text-[11px] text-slate-500 mt-0.5">Come 1 vez al día + agua y limpieza</div>
                             </button>
-                            <button type="button" onclick="setVisitsPerDay(2)" id="vpd-2" class="text-left p-3 rounded-xl border-2 border-brand-600 bg-emerald-50/40 transition-all">
+                            <button type="button" onclick="setVisitsPerDay(2)" id="vpd-2" class="text-left p-3 rounded-xl border-2 border-slate-200 hover:border-slate-300 transition-all">
                                 <div class="font-bold text-[#1B4332] text-xs sm:text-sm flex items-center justify-between">
                                     <span>2 visitas / día</span>
                                     <span class="text-[10px] bg-emerald-200/80 text-emerald-900 px-1.5 py-0.5 rounded font-bold">Ideal</span>
@@ -1140,7 +1140,7 @@
                     <div class="pt-3 border-t border-slate-100">
                         <label id="txt-calc-step5" data-editable="true" class="block text-sm font-bold text-[#1B4332] mb-2.5">5. ¿Qué incluye cada visita a domicilio?</label>
                         <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
-                            <button type="button" onclick="setVacationWalkMode('none')" id="vmode-none" class="text-left p-3 rounded-xl border-2 border-brand-600 bg-emerald-50/40 transition-all flex flex-col justify-between gap-1.5">
+                            <button type="button" onclick="setVacationWalkMode('none')" id="vmode-none" class="text-left p-3 rounded-xl border-2 border-slate-200 hover:border-slate-300 transition-all flex flex-col justify-between gap-1.5">
                                 <div>
                                     <div id="txt-calc-vm1-t" data-editable="true" class="font-bold text-[#1B4332] text-xs sm:text-sm">Solo Comida y Cuidado</div>
                                     <div id="txt-calc-vm1-d" data-editable="true" class="text-[11px] text-slate-500 mt-0.5">Comida, agua fresca y compañía en casa/patio</div>
@@ -1148,10 +1148,10 @@
                                 <span class="text-[10px] font-bold text-slate-600 bg-slate-100 px-2 py-0.5 rounded self-start">Sin paseo en calle</span>
                             </button>
 
-                            <button type="button" onclick="setVacationWalkMode('walk30')" id="vmode-walk30" class="text-left p-3 rounded-xl border-2 border-slate-200 hover:border-slate-300 transition-all flex flex-col justify-between gap-1.5">
+                            <button type="button" onclick="setVacationWalkMode('walk30')" id="vmode-walk30" class="text-left p-3 rounded-xl border-2 border-brand-600 bg-emerald-50/40 transition-all flex flex-col justify-between gap-1.5">
                                 <div>
                                     <div id="txt-calc-vm2-t" data-editable="true" class="font-bold text-[#1B4332] text-xs sm:text-sm">Cuidado + Paseo 30 min</div>
-                                    <div id="txt-calc-vm2-d" data-editable="true" class="text-[11px] text-slate-500 mt-0.5">Comida + caminata de <strong>media hora</strong></div>
+                                    <div id="txt-calc-vm2-d" data-editable="true" class="text-[11px] text-slate-500 mt-0.5">Comida&nbsp; + caminata de <strong>media hora</strong></div>
                                 </div>
                                 <span id="vmode-walk30-plus" class="text-[10px] font-bold text-brand-700 bg-emerald-100 px-2 py-0.5 rounded self-start">+$3.000/paseo</span>
                             </button>
@@ -1166,7 +1166,7 @@
                         </div>
 
                         <!-- Selector de cantidad de paseos dentro de las vacaciones -->
-                        <div id="vacation-walks-count-box" class="hidden mt-3 bg-[#F7F3EB] border border-[#1B4332]/15 rounded-2xl p-3.5 space-y-2.5">
+                        <div id="vacation-walks-count-box" class="mt-3 bg-[#F7F3EB] border border-[#1B4332]/15 rounded-2xl p-3.5 space-y-2.5">
                             <div class="flex flex-wrap items-center justify-between gap-2">
                                 <div>
                                     <label for="vacation-walks-input" class="text-xs sm:text-sm font-bold text-[#1B4332]">¿Cuántos paseos querés incluir en toda la estadía?</label>
@@ -1174,7 +1174,7 @@
                                 </div>
                                 <div class="flex items-center gap-1.5">
                                     <button type="button" onclick="adjustVacationWalkCount(-1)" class="w-8 h-8 rounded-lg bg-white border border-[#1B4332]/20 hover:bg-slate-50 font-bold text-[#1B4332] flex items-center justify-center">−</button>
-                                    <input type="number" id="vacation-walks-input" min="1" max="60" value="5" oninput="setVacationWalkCount(this.value)" class="w-14 text-center font-bold text-brand-700 bg-white border border-brand-600/40 rounded-lg py-1 text-sm focus:outline-none focus:border-brand-600">
+                                    <input type="number" id="vacation-walks-input" min="1" max="10" value="5" oninput="setVacationWalkCount(this.value)" class="w-14 text-center font-bold text-brand-700 bg-white border border-brand-600/40 rounded-lg py-1 text-sm focus:outline-none focus:border-brand-600">
                                     <button type="button" onclick="adjustVacationWalkCount(1)" class="w-8 h-8 rounded-lg bg-white border border-[#1B4332]/20 hover:bg-slate-50 font-bold text-[#1B4332] flex items-center justify-center">+</button>
                                 </div>
                             </div>
@@ -1256,10 +1256,10 @@
                     <div>
                         <div id="calc-summary-title" class="text-xs text-slate-400 uppercase tracking-wider font-semibold">Total Estimado por Semana</div>
                         <div class="flex flex-wrap items-baseline gap-2 mt-1">
-                            <span id="calc-weekly-total" class="text-3xl font-extrabold text-white">$12.000</span>
-                            <span class="text-xs text-emerald-400 font-medium" id="calc-discount-badge">-30% en perro extra</span>
+                            <span id="calc-weekly-total" class="text-3xl font-extrabold text-white">$7.000</span>
+                            <span class="text-xs text-amber-400 font-medium hidden" id="calc-discount-badge"></span>
                         </div>
-                        <div id="calc-sub-details" class="text-xs text-slate-300 mt-1">Por paseo: <strong id="calc-per-session">$12.000</strong> · Mensual (4 sem): <strong id="calc-monthly-total">$48.000</strong></div>
+                        <div id="calc-sub-details" class="text-xs text-slate-300 mt-1">Por paseo: <strong id="calc-per-session">$7.000</strong> · Mensual (4 sem): <strong id="calc-monthly-total">$28.000</strong></div>
                     </div>
                     <button id="btn-calc-edit-rates" type="button" onclick="toggleAdminMode()" class="text-xs text-slate-300 hover:text-white underline self-start sm:self-center shrink-0 hidden">
                         Editar tarifas base
@@ -1287,12 +1287,12 @@
 
                     <div class="space-y-3">
                         <div>
-                            <label id="pet-details-1-label" data-editable="true" class="block text-xs font-semibold text-slate-700 mb-1">Nombre y Raza del 1° perro *</label>
+                            <label id="pet-details-1-label" data-editable="true" class="block text-xs font-semibold text-slate-700 mb-1">Nombre y Raza *</label>
                             <input type="text" id="pet-details" required="" placeholder="Ej: Thor (Golden)" class="w-full rounded-xl border border-slate-300 px-3.5 py-2.5 text-slate-800 focus:outline-none focus:border-brand-600">
                         </div>
-                        <div id="pet-details-2-wrap" class="">
+                        <div id="pet-details-2-wrap" class="hidden">
                             <label class="block text-xs font-semibold text-slate-700 mb-1">Nombre y Raza del 2° perro *</label>
-                            <input type="text" id="pet-details-2" placeholder="Ej: Luna (Labrador)" class="w-full rounded-xl border border-slate-300 px-3.5 py-2.5 text-slate-800 focus:outline-none focus:border-brand-600" required="">
+                            <input type="text" id="pet-details-2" placeholder="Ej: Luna (Labrador)" class="w-full rounded-xl border border-slate-300 px-3.5 py-2.5 text-slate-800 focus:outline-none focus:border-brand-600">
                         </div>
                         <div id="pet-details-3-wrap" class="hidden">
                             <label class="block text-xs font-semibold text-slate-700 mb-1">Nombre y Raza del 3° perro *</label>
@@ -1318,12 +1318,12 @@
                         <pre id="whatsapp-preview" class="text-xs text-slate-700 whitespace-pre-wrap font-sans leading-relaxed">¡Hola! Soy [Tu Nombre].
 Estuve viendo tu página y quería consultar disponibilidad para:
 
-🐾 *Mascota(s):* [Nombre y Raza] y [2° Perro] (2 mascotas)
+🐾 *Mascota(s):* [Nombre y Raza] (1 mascota)
 📍 *Ubicación:* B° Solares de Gabrielli
 🐕 *Servicio:* Paseo 60 min
 📅 *Frecuencia:* 1 día(s) por semana
 
-💰 *Cotización base:* $12.000 / semana ($12.000 por paseo).
+💰 *Cotización base:* $7.000 / semana ($7.000 por paseo).
 ¿Me confirmás disponibilidad para coordinar una entrevista previa?</pre>
                     </div>
 
@@ -1440,7 +1440,7 @@ Estuve viendo tu página y quería consultar disponibilidad para:
     <!-- APPLICATION LOGIC                          -->
     <!-- ========================================== -->
     <script>
-        const STORAGE_KEY = 'mateo_petcare_settings_1795726434408';
+        const STORAGE_KEY = 'mateo_petcare_settings_1795728273641';
         let DEFAULT_HERO_PHOTO_SRC = '';
 
         const THEME_PALETTES = {
@@ -1513,13 +1513,8 @@ Estuve viendo tu página y quería consultar disponibilidad para:
                     "txt-hero-desc": "\n                    Sin manadas, horarios fijos y reporte diario con fotos por WhatsApp.\n                ",
                     "txt-c1-b3": "Buena opción para perros más tranquilos.",
                     "txt-c2-b3": "Ideal para perros con mucha energía acumulada.",
-                    "txt-m2-t": "02. Cero Manadas",
-                    "txt-calc-s3-d": "Visitas diarias a tu casa",
-                    "txt-calc-vm2-d": "Comida + caminata de <strong>media hora</strong>",
-                    "txt-calc-vm3-d": "Comida + caminata de <strong>1 hora completa</strong>",
-                    "txt-calc-vm1-d": "Comida, agua fresca y compañía en casa/patio",
                     "txt-float-wa": "Consulta rápida",
-                    "txt-brand-name": "Paseos y Cuidados",
+                    "txt-brand-name": "Mateo",
                     "txt-brand-city": "Luján de Cuyo",
                     "txt-hero-pill": "Luján de Cuyo, Mendoza",
                     "txt-cta-1": "Cotizar ahora",
@@ -1552,6 +1547,7 @@ Estuve viendo tu página y quería consultar disponibilidad para:
                     "txt-met-desc": "\n                    Estudiante de Ingeniería Industrial y vecino de Luján de Cuyo.\n                ",
                     "txt-m1-t": "01. Entrevista Previa",
                     "txt-m1-d": "\n                        Visita previa sin costo en tu casa para conocernos.\n                    ",
+                    "txt-m2-t": "02. Cero Manadas",
                     "txt-m2-d": "\n                        Paseos individuales o en dupla compatible, nunca manadas.\n                    ",
                     "txt-m3-t": "03. Horarios Fijos",
                     "txt-m3-d": "\n                        Franja horaria fija y puntualidad estricta cada semana.\n                    ",
@@ -1571,6 +1567,7 @@ Estuve viendo tu página y quería consultar disponibilidad para:
                     "txt-calc-s2-t": "Paseo 60 Min",
                     "txt-calc-s2-d": "Ejercicio completo y activo",
                     "txt-calc-s3-t": "Cuidado Vacaciones",
+                    "txt-calc-s3-d": "Visitas diarias a tu casa",
                     "txt-calc-step2": "2. Cantidad de perros (del mismo hogar)",
                     "txt-calc-pet1-sub": "Tarifa base (100%)",
                     "txt-calc-step3": "3. Ubicación del domicilio",
@@ -1592,12 +1589,15 @@ Estuve viendo tu página y quería consultar disponibilidad para:
                     "txt-calc-vpd3-d": "Mañana, Mediodía y Noche (Cachorros/Rutina)",
                     "txt-calc-step5": "5. ¿Qué incluye cada visita a domicilio?",
                     "txt-calc-vm1-t": "Solo Comida y Cuidado",
+                    "txt-calc-vm1-d": "Comida, agua fresca y compañía en casa/patio",
                     "txt-calc-vm2-t": "Cuidado + Paseo 30 min",
+                    "txt-calc-vm2-d": "Comida&nbsp; + caminata de <strong>media hora</strong>",
                     "txt-calc-vm3-t": "Cuidado + Paseo 60 min",
+                    "txt-calc-vm3-d": "Comida + caminata de <strong>1 hora completa</strong>",
                     "txt-form-title": "Completar Datos para Coordinar",
                     "txt-form-sub": "Genera el mensaje listo con tu cotización",
                     "txt-lbl-name": "Tu Nombre *",
-                    "pet-details-1-label": "Nombre y Raza del 1° perro *",
+                    "pet-details-1-label": "Nombre y Raza *",
                     "txt-lbl-dates": "Fechas Seleccionadas en el Calendario",
                     "txt-btn-send-wa": "Enviar Consulta por WhatsApp",
                     "txt-faq-kicker": "Dudas Comunes",
