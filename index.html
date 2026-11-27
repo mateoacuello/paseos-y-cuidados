@@ -67,7 +67,7 @@
     <!-- Toast Notification Container -->
     <div id="toast" class="fixed bottom-20 right-5 z-50 transform transition-all duration-300 pointer-events-none bg-[#1B4332] text-white px-5 py-3.5 rounded-xl shadow-xl flex items-center gap-3 border border-[#C7C0B3]/30 translate-y-24 opacity-0">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="check-circle-2" class="lucide lucide-check-circle-2 w-5 h-5 text-emerald-400 shrink-0"><circle cx="12" cy="12" r="10"></circle><path d="m9 12 2 2 4-4"></path></svg>
-        <span id="toast-msg" class="text-sm font-medium">Textos guardados en la página</span>
+        <span id="toast-msg" class="text-sm font-medium">Foto agregada a tu experiencia</span>
     </div>
 
     <!-- Floating Quick WhatsApp Button for Visitors -->
@@ -536,7 +536,39 @@
                                 <button type="button" onclick="addPhotoFromAdmin()" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-semibold py-2 rounded-lg transition">
                                     + Agregar Foto a Mi Experiencia
                                 </button>
-                                <div id="admin-photos-list" class="space-y-1.5 pt-2 border-t border-slate-800 max-h-36 overflow-y-auto"></div>
+                                <div id="admin-photos-list" class="space-y-1.5 pt-2 border-t border-slate-800 max-h-36 overflow-y-auto">
+                    <div class="flex items-center justify-between gap-2 bg-slate-800/90 px-2.5 py-1.5 rounded-lg">
+                        <div class="flex items-center gap-2 truncate">
+                            <img src="akim.jpeg" alt="" class="w-6 h-6 rounded object-cover shrink-0">
+                            <span class="truncate text-slate-200"><strong>Akim</strong> · Paseos</span>
+                        </div>
+                        <button type="button" onclick="deletePhoto('p-1795741328519')" class="text-rose-400 hover:text-rose-300 font-semibold shrink-0">Borrar</button>
+                    </div>
+                
+                    <div class="flex items-center justify-between gap-2 bg-slate-800/90 px-2.5 py-1.5 rounded-lg">
+                        <div class="flex items-center gap-2 truncate">
+                            <img src="rufi.jpeg" alt="" class="w-6 h-6 rounded object-cover shrink-0">
+                            <span class="truncate text-slate-200"><strong>Rufi</strong> · Paseos</span>
+                        </div>
+                        <button type="button" onclick="deletePhoto('p-1795741264312')" class="text-rose-400 hover:text-rose-300 font-semibold shrink-0">Borrar</button>
+                    </div>
+                
+                    <div class="flex items-center justify-between gap-2 bg-slate-800/90 px-2.5 py-1.5 rounded-lg">
+                        <div class="flex items-center gap-2 truncate">
+                            <img src="fiore, mara y juli.jpeg" alt="" class="w-6 h-6 rounded object-cover shrink-0">
+                            <span class="truncate text-slate-200"><strong>Fiore, Mara y Juli</strong> · Paseos y cuidado</span>
+                        </div>
+                        <button type="button" onclick="deletePhoto('p-1795741137967')" class="text-rose-400 hover:text-rose-300 font-semibold shrink-0">Borrar</button>
+                    </div>
+                
+                    <div class="flex items-center justify-between gap-2 bg-slate-800/90 px-2.5 py-1.5 rounded-lg">
+                        <div class="flex items-center gap-2 truncate">
+                            <img src="jero y uma.jpeg" alt="" class="w-6 h-6 rounded object-cover shrink-0">
+                            <span class="truncate text-slate-200"><strong>Jero y Uma</strong> · Paseos y cuidado</span>
+                        </div>
+                        <button type="button" onclick="deletePhoto('p-1795740779383')" class="text-rose-400 hover:text-rose-300 font-semibold shrink-0">Borrar</button>
+                    </div>
+                </div>
                             </div>
 
                             <!-- Moderación de comentarios dejados por los clientes -->
@@ -577,7 +609,7 @@
                     Paseo y cuidado a domicilio para tu perro en <span class="text-brand-600">Luján de Cuyo.</span>
                 </h1>
                 <p id="txt-hero-desc" data-editable="true" class="text-base sm:text-lg text-[#516359] max-w-2xl leading-relaxed">
-                    Sin manadas, horarios fijos y reporte diario con fotos por WhatsApp.
+                    Paseos individuales, horarios flexibles y reporte diario con fotos por WhatsApp.
                 </p>
                 <div id="hero-cta-row" class="hidden">
                     <span id="txt-cta-1" data-editable="true">Cotizar ahora</span>
@@ -679,7 +711,7 @@
             <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-3 mb-10">
                 <div>
                     <span id="txt-serv-kicker" data-editable="true" class="text-xs font-bold uppercase tracking-wider text-brand-600">Servicios</span>
-                    <h2 id="txt-serv-heading" data-editable="true" class="text-2xl sm:text-3xl font-bold text-[#1B4332] mt-1">Tres modalidades, cero vueltas.</h2>
+                    <h2 id="txt-serv-heading" data-editable="true" class="text-2xl sm:text-3xl font-bold text-[#1B4332] mt-1">Tres modalidades</h2>
                 </div>
                 <p id="txt-serv-sub" data-editable="true" class="text-[#516359] text-sm max-w-sm">
                     Entrevista previa sin cargo antes de empezar.
@@ -733,15 +765,15 @@
                         <ul class="mt-4 space-y-2 text-sm text-slate-700">
                             <li class="flex items-center gap-2">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="check" class="lucide lucide-check w-4 h-4 text-brand-600 shrink-0"><path d="M20 6 9 17l-5-5"></path></svg>
-                                <span id="txt-c2-b1" data-editable="true"><strong>60 minutos</strong> de ejercicio y olfateo guiado.</span>
+                                <span id="txt-c2-b1" data-editable="true"><strong>60 minutos</strong> de ejercicio y olfateo.</span>
                             </li>
                             <li class="flex items-center gap-2">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="check" class="lucide lucide-check w-4 h-4 text-brand-600 shrink-0"><path d="M20 6 9 17l-5-5"></path></svg>
-                                <span id="txt-c2-b2" data-editable="true">Sin manadas masivas: control y correa segura.</span>
+                                <span id="txt-c2-b2" data-editable="true">Paseo individual, control y correa segura.</span>
                             </li>
                             <li class="flex items-center gap-2">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="check" class="lucide lucide-check w-4 h-4 text-brand-600 shrink-0"><path d="M20 6 9 17l-5-5"></path></svg>
-                                <span id="txt-c2-b3" data-editable="true">Ideal para perros con mucha energía acumulada.</span>
+                                <span id="txt-c2-b3" data-editable="true">Ideal para perros con mucha energía.</span>
                             </li>
                         </ul>
                     </div>
@@ -766,7 +798,7 @@
                         <ul class="mt-4 space-y-2 text-sm text-slate-700">
                             <li class="flex items-center gap-2">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="check" class="lucide lucide-check w-4 h-4 text-brand-600 shrink-0"><path d="M20 6 9 17l-5-5"></path></svg>
-                                <span id="txt-c3-b1" data-editable="true"><strong>1, 2 o 3 visitas diarias</strong> según cuántas veces coma.</span>
+                                <span id="txt-c3-b1" data-editable="true"><strong>1, 2 o 3 visitas diarias</strong> según cuántas veces se alimente.</span>
                             </li>
                             <li class="flex items-center gap-2">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="check" class="lucide lucide-check w-4 h-4 text-brand-600 shrink-0"><path d="M20 6 9 17l-5-5"></path></svg>
@@ -804,27 +836,24 @@
 
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 <div class="bg-[#245640]/80 border border-[#C7C0B3]/25 p-5 rounded-2xl">
-                    <div id="txt-m1-t" data-editable="true" class="text-emerald-400 font-bold text-lg mb-1">01. Entrevista Previa</div>
+                    <div id="txt-m1-t" data-editable="true" class="text-emerald-400 font-bold text-lg mb-1">01. Entrevista previa</div>
                     <p id="txt-m1-d" data-editable="true" class="text-slate-300 text-xs leading-relaxed">
                         Visita previa sin costo en tu casa para conocernos.
                     </p>
                 </div>
                 <div class="bg-[#245640]/80 border border-[#C7C0B3]/25 p-5 rounded-2xl">
-                    <div id="txt-m2-t" data-editable="true" class="text-emerald-400 font-bold text-lg mb-1">02. Cero Manadas</div>
+                    <div id="txt-m2-t" data-editable="true" class="text-emerald-400 font-bold text-lg mb-1">02. Paseos individuales</div>
                     <p id="txt-m2-d" data-editable="true" class="text-slate-300 text-xs leading-relaxed">
-                        Paseos individuales o en dupla compatible, nunca manadas.
-                    </p>
+                        Cada perro disfruta de su paseo por separado.</p>
                 </div>
                 <div class="bg-[#245640]/80 border border-[#C7C0B3]/25 p-5 rounded-2xl">
-                    <div id="txt-m3-t" data-editable="true" class="text-emerald-400 font-bold text-lg mb-1">03. Horarios Fijos</div>
-                    <p id="txt-m3-d" data-editable="true" class="text-slate-300 text-xs leading-relaxed">
-                        Franja horaria fija y puntualidad estricta cada semana.
-                    </p>
+                    <div id="txt-m3-t" data-editable="true" class="text-emerald-400 font-bold text-lg mb-1">03. Horarios flexibles</div>
+                    <p id="txt-m3-d" data-editable="true" class="text-slate-300 text-xs leading-relaxed">Acordamos previamente los horarios según disponibilidad.</p>
                 </div>
                 <div class="bg-[#245640]/80 border border-[#C7C0B3]/25 p-5 rounded-2xl">
-                    <div id="txt-m4-t" data-editable="true" class="text-emerald-400 font-bold text-lg mb-1">04. Registro Transparente</div>
+                    <div id="txt-m4-t" data-editable="true" class="text-emerald-400 font-bold text-lg mb-1">04. Seguimiento</div>
                     <p id="txt-m4-d" data-editable="true" class="text-slate-300 text-xs leading-relaxed">
-                        Fotos y confirmación por WhatsApp al terminar cada visita.
+                        Fotos y novedades por WhatsApp al terminar cada visita.
                     </p>
                 </div>
             </div>
@@ -836,7 +865,7 @@
     <!-- ========================================== -->
     <section id="experiencias" class="py-14 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto space-y-14">
         <!-- Photo Gallery Block: Mateo's Experience with Dogs Walked & Cared For -->
-        <div id="block-gallery" class="space-y-8 hidden">
+        <div id="block-gallery" class="space-y-8">
             <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2">
                 <div>
                     <span id="txt-gal-kicker" data-editable="true" class="text-xs font-bold uppercase tracking-wider text-brand-600">Experiencia</span>
@@ -847,13 +876,13 @@
             <div id="public-photos-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                     <div onclick="openPhotoLightbox(0)" class="group cursor-pointer bg-white rounded-2xl overflow-hidden border border-[#C7C0B3]/40 shadow-sm hover:shadow-lg transition flex flex-col">
                         <div class="relative h-60 bg-slate-100 overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Rocco y Simón" onerror="this.src='https://placehold.co/600x400/dcfce7/065f46?text=Mascota+en+Lujan'" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
-                            <span class="absolute bottom-3 left-3 bg-slate-900/80 backdrop-blur-sm text-white text-[11px] font-semibold px-2.5 py-1 rounded-lg">Paseo de 60 min en dupla compatible</span>
+                            <img src="akim.jpeg" alt="Akim" onerror="this.src='https://placehold.co/600x400/dcfce7/065f46?text=Mascota+en+Lujan'" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                            <span class="absolute bottom-3 left-3 bg-slate-900/80 backdrop-blur-sm text-white text-[11px] font-semibold px-2.5 py-1 rounded-lg">Paseos</span>
                         </div>
                         <div class="p-4 flex items-center justify-between gap-2">
                             <div class="flex items-center gap-2 text-sm font-bold text-[#1B4332]">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="dog" class="lucide lucide-dog w-4 h-4 text-brand-600 shrink-0"><path d="M11.25 16.25h1.5L12 17z"></path><path d="M16 14v.5"></path><path d="M4.42 11.247A13.152 13.152 0 0 0 4 14.556C4 18.728 7.582 21 12 21s8-2.272 8-6.444a11.702 11.702 0 0 0-.493-3.309"></path><path d="M8 14v.5"></path><path d="M8.5 8.5c-.384 1.05-1.083 2.028-2.344 2.5-1.931.722-3.576-.297-3.656-1-.113-.994 1.177-6.53 4-7 1.923-.321 3.651.845 3.651 2.235A7.497 7.497 0 0 1 14 5.277c0-1.39 1.844-2.598 3.767-2.277 2.823.47 4.113 6.006 4 7-.08.703-1.725 1.722-3.656 1-1.261-.472-1.855-1.45-2.239-2.5"></path></svg>
-                                <span>Rocco y Simón</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-brand-600 shrink-0"><path d="M11.25 16.25h1.5L12 17z"></path><path d="M16 14v.5"></path><path d="M4.42 11.247A13.152 13.152 0 0 0 4 14.556C4 18.728 7.582 21 12 21s8-2.272 8-6.444a11.702 11.702 0 0 0-.493-3.309"></path><path d="M8 14v.5"></path><path d="M8.5 8.5c-.384 1.05-1.083 2.028-2.344 2.5-1.931.722-3.576-.297-3.656-1-.113-.994 1.177-6.53 4-7 1.923-.321 3.651.845 3.651 2.235A7.497 7.497 0 0 1 14 5.277c0-1.39 1.844-2.598 3.767-2.277 2.823.47 4.113 6.006 4 7-.08.703-1.725 1.722-3.656 1-1.261-.472-1.855-1.45-2.239-2.5"></path></svg>
+                                <span>Akim</span>
                             </div>
                             <span class="text-xs text-brand-600 font-medium group-hover:underline">Ver foto</span>
                         </div>
@@ -861,13 +890,13 @@
                 
                     <div onclick="openPhotoLightbox(1)" class="group cursor-pointer bg-white rounded-2xl overflow-hidden border border-[#C7C0B3]/40 shadow-sm hover:shadow-lg transition flex flex-col">
                         <div class="relative h-60 bg-slate-100 overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Toby (Corgi)" onerror="this.src='https://placehold.co/600x400/dcfce7/065f46?text=Mascota+en+Lujan'" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
-                            <span class="absolute bottom-3 left-3 bg-slate-900/80 backdrop-blur-sm text-white text-[11px] font-semibold px-2.5 py-1 rounded-lg">Paseos semanales en Luján de Cuyo</span>
+                            <img src="rufi.jpeg" alt="Rufi" onerror="this.src='https://placehold.co/600x400/dcfce7/065f46?text=Mascota+en+Lujan'" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                            <span class="absolute bottom-3 left-3 bg-slate-900/80 backdrop-blur-sm text-white text-[11px] font-semibold px-2.5 py-1 rounded-lg">Paseos</span>
                         </div>
                         <div class="p-4 flex items-center justify-between gap-2">
                             <div class="flex items-center gap-2 text-sm font-bold text-[#1B4332]">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="dog" class="lucide lucide-dog w-4 h-4 text-brand-600 shrink-0"><path d="M11.25 16.25h1.5L12 17z"></path><path d="M16 14v.5"></path><path d="M4.42 11.247A13.152 13.152 0 0 0 4 14.556C4 18.728 7.582 21 12 21s8-2.272 8-6.444a11.702 11.702 0 0 0-.493-3.309"></path><path d="M8 14v.5"></path><path d="M8.5 8.5c-.384 1.05-1.083 2.028-2.344 2.5-1.931.722-3.576-.297-3.656-1-.113-.994 1.177-6.53 4-7 1.923-.321 3.651.845 3.651 2.235A7.497 7.497 0 0 1 14 5.277c0-1.39 1.844-2.598 3.767-2.277 2.823.47 4.113 6.006 4 7-.08.703-1.725 1.722-3.656 1-1.261-.472-1.855-1.45-2.239-2.5"></path></svg>
-                                <span>Toby (Corgi)</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-brand-600 shrink-0"><path d="M11.25 16.25h1.5L12 17z"></path><path d="M16 14v.5"></path><path d="M4.42 11.247A13.152 13.152 0 0 0 4 14.556C4 18.728 7.582 21 12 21s8-2.272 8-6.444a11.702 11.702 0 0 0-.493-3.309"></path><path d="M8 14v.5"></path><path d="M8.5 8.5c-.384 1.05-1.083 2.028-2.344 2.5-1.931.722-3.576-.297-3.656-1-.113-.994 1.177-6.53 4-7 1.923-.321 3.651.845 3.651 2.235A7.497 7.497 0 0 1 14 5.277c0-1.39 1.844-2.598 3.767-2.277 2.823.47 4.113 6.006 4 7-.08.703-1.725 1.722-3.656 1-1.261-.472-1.855-1.45-2.239-2.5"></path></svg>
+                                <span>Rufi</span>
                             </div>
                             <span class="text-xs text-brand-600 font-medium group-hover:underline">Ver foto</span>
                         </div>
@@ -875,13 +904,27 @@
                 
                     <div onclick="openPhotoLightbox(2)" class="group cursor-pointer bg-white rounded-2xl overflow-hidden border border-[#C7C0B3]/40 shadow-sm hover:shadow-lg transition flex flex-col">
                         <div class="relative h-60 bg-slate-100 overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1537151608828-ea2b11777ee8?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Milo" onerror="this.src='https://placehold.co/600x400/dcfce7/065f46?text=Mascota+en+Lujan'" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
-                            <span class="absolute bottom-3 left-3 bg-slate-900/80 backdrop-blur-sm text-white text-[11px] font-semibold px-2.5 py-1 rounded-lg">Cuidado a domicilio en vacaciones</span>
+                            <img src="fiore, mara y juli.jpeg" alt="Fiore, Mara y Juli" onerror="this.src='https://placehold.co/600x400/dcfce7/065f46?text=Mascota+en+Lujan'" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                            <span class="absolute bottom-3 left-3 bg-slate-900/80 backdrop-blur-sm text-white text-[11px] font-semibold px-2.5 py-1 rounded-lg">Paseos y cuidado</span>
                         </div>
                         <div class="p-4 flex items-center justify-between gap-2">
                             <div class="flex items-center gap-2 text-sm font-bold text-[#1B4332]">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="dog" class="lucide lucide-dog w-4 h-4 text-brand-600 shrink-0"><path d="M11.25 16.25h1.5L12 17z"></path><path d="M16 14v.5"></path><path d="M4.42 11.247A13.152 13.152 0 0 0 4 14.556C4 18.728 7.582 21 12 21s8-2.272 8-6.444a11.702 11.702 0 0 0-.493-3.309"></path><path d="M8 14v.5"></path><path d="M8.5 8.5c-.384 1.05-1.083 2.028-2.344 2.5-1.931.722-3.576-.297-3.656-1-.113-.994 1.177-6.53 4-7 1.923-.321 3.651.845 3.651 2.235A7.497 7.497 0 0 1 14 5.277c0-1.39 1.844-2.598 3.767-2.277 2.823.47 4.113 6.006 4 7-.08.703-1.725 1.722-3.656 1-1.261-.472-1.855-1.45-2.239-2.5"></path></svg>
-                                <span>Milo</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-brand-600 shrink-0"><path d="M11.25 16.25h1.5L12 17z"></path><path d="M16 14v.5"></path><path d="M4.42 11.247A13.152 13.152 0 0 0 4 14.556C4 18.728 7.582 21 12 21s8-2.272 8-6.444a11.702 11.702 0 0 0-.493-3.309"></path><path d="M8 14v.5"></path><path d="M8.5 8.5c-.384 1.05-1.083 2.028-2.344 2.5-1.931.722-3.576-.297-3.656-1-.113-.994 1.177-6.53 4-7 1.923-.321 3.651.845 3.651 2.235A7.497 7.497 0 0 1 14 5.277c0-1.39 1.844-2.598 3.767-2.277 2.823.47 4.113 6.006 4 7-.08.703-1.725 1.722-3.656 1-1.261-.472-1.855-1.45-2.239-2.5"></path></svg>
+                                <span>Fiore, Mara y Juli</span>
+                            </div>
+                            <span class="text-xs text-brand-600 font-medium group-hover:underline">Ver foto</span>
+                        </div>
+                    </div>
+                
+                    <div onclick="openPhotoLightbox(3)" class="group cursor-pointer bg-white rounded-2xl overflow-hidden border border-[#C7C0B3]/40 shadow-sm hover:shadow-lg transition flex flex-col">
+                        <div class="relative h-60 bg-slate-100 overflow-hidden">
+                            <img src="jero y uma.jpeg" alt="Jero y Uma" onerror="this.src='https://placehold.co/600x400/dcfce7/065f46?text=Mascota+en+Lujan'" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                            <span class="absolute bottom-3 left-3 bg-slate-900/80 backdrop-blur-sm text-white text-[11px] font-semibold px-2.5 py-1 rounded-lg">Paseos y cuidado</span>
+                        </div>
+                        <div class="p-4 flex items-center justify-between gap-2">
+                            <div class="flex items-center gap-2 text-sm font-bold text-[#1B4332]">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-brand-600 shrink-0"><path d="M11.25 16.25h1.5L12 17z"></path><path d="M16 14v.5"></path><path d="M4.42 11.247A13.152 13.152 0 0 0 4 14.556C4 18.728 7.582 21 12 21s8-2.272 8-6.444a11.702 11.702 0 0 0-.493-3.309"></path><path d="M8 14v.5"></path><path d="M8.5 8.5c-.384 1.05-1.083 2.028-2.344 2.5-1.931.722-3.576-.297-3.656-1-.113-.994 1.177-6.53 4-7 1.923-.321 3.651.845 3.651 2.235A7.497 7.497 0 0 1 14 5.277c0-1.39 1.844-2.598 3.767-2.277 2.823.47 4.113 6.006 4 7-.08.703-1.725 1.722-3.656 1-1.261-.472-1.855-1.45-2.239-2.5"></path></svg>
+                                <span>Jero y Uma</span>
                             </div>
                             <span class="text-xs text-brand-600 font-medium group-hover:underline">Ver foto</span>
                         </div>
@@ -890,16 +933,16 @@
         </div>
 
         <!-- Lightbox Modal to view a photo larger -->
-        <div id="photo-lightbox" onclick="closePhotoLightbox()" class="hidden fixed inset-0 z-50 bg-slate-950/85 backdrop-blur-sm flex items-center justify-center p-4 cursor-zoom-out">
+        <div id="photo-lightbox" onclick="closePhotoLightbox()" class="fixed inset-0 z-50 bg-slate-950/85 backdrop-blur-sm flex items-center justify-center p-4 cursor-zoom-out hidden">
             <div class="max-w-3xl w-full bg-slate-900 rounded-3xl overflow-hidden border border-slate-700 shadow-2xl" onclick="event.stopPropagation()">
                 <div class="relative bg-black flex items-center justify-center max-h-[75vh]">
-                    <img id="lightbox-img" src="" alt="Mascota en paseo" class="max-h-[75vh] w-auto object-contain">
+                    <img id="lightbox-img" src="fiore, mara y juli.jpeg" alt="Mascota en paseo" class="max-h-[75vh] w-auto object-contain">
                     <button type="button" onclick="closePhotoLightbox()" class="absolute top-3 right-3 w-9 h-9 rounded-full bg-slate-900/80 text-white hover:bg-slate-800 flex items-center justify-center font-bold">✕</button>
                 </div>
                 <div class="p-4 flex items-center justify-between text-white">
                     <div>
-                        <div id="lightbox-caption" class="font-bold text-base"></div>
-                        <div id="lightbox-tag" class="text-xs text-emerald-400"></div>
+                        <div id="lightbox-caption" class="font-bold text-base">Fiore, Mara y Juli</div>
+                        <div id="lightbox-tag" class="text-xs text-emerald-400">Paseos y cuidado</div>
                     </div>
                     <span class="text-xs text-slate-400">Paseo y Cuidado · Luján de Cuyo</span>
                 </div>
@@ -996,7 +1039,7 @@
                 <div>
                     <label id="txt-calc-step1" data-editable="true" class="block text-sm font-bold text-[#1B4332] mb-3">1. Selecciona el tipo de servicio</label>
                     <div class="grid grid-cols-1 sm:grid-cols-3 gap-3" id="service-options">
-                        <button type="button" onclick="setService('walk30')" id="btn-walk30" class="service-btn text-left p-4 rounded-2xl border-2 border-slate-200 hover:border-brand-500 transition-all flex flex-col justify-between gap-2">
+                        <button type="button" onclick="setService('walk30')" id="btn-walk30" class="service-btn text-left p-4 rounded-2xl border-2 border-brand-600 bg-emerald-50/40 transition-all flex flex-col justify-between gap-2">
                             <div>
                                 <div id="txt-calc-s1-t" data-editable="true" class="font-bold text-[#1B4332] text-sm">Paseo 30 Min</div>
                                 <div id="txt-calc-s1-d" data-editable="true" class="text-xs text-slate-500 mt-0.5">Caminata ágil y recreativa</div>
@@ -1004,7 +1047,7 @@
                             <span class="text-xs font-bold text-brand-700 bg-emerald-50 px-2.5 py-1 rounded-lg self-start" id="badge-walk30">$3.500</span>
                         </button>
 
-                        <button type="button" onclick="setService('walk60')" id="btn-walk60" class="service-btn text-left p-4 rounded-2xl border-2 border-brand-600 bg-emerald-50/40 transition-all flex flex-col justify-between gap-2">
+                        <button type="button" onclick="setService('walk60')" id="btn-walk60" class="service-btn text-left p-4 rounded-2xl border-2 border-slate-200 hover:border-brand-500 transition-all flex flex-col justify-between gap-2">
                             <div>
                                 <div id="txt-calc-s2-t" data-editable="true" class="font-bold text-[#1B4332] text-sm">Paseo 60 Min</div>
                                 <div id="txt-calc-s2-d" data-editable="true" class="text-xs text-slate-500 mt-0.5">Ejercicio completo y activo</div>
@@ -1029,7 +1072,7 @@
                         <span id="extra-pet-label" class="text-xs text-emerald-700 font-semibold bg-emerald-50 px-2.5 py-0.5 rounded-lg">1° perro 100% · -30% en perro extra (abona 70%)</span>
                     </div>
                     <div class="grid grid-cols-3 gap-3">
-                        <button type="button" onclick="setPets(1)" id="pet-1" class="pet-btn py-2.5 px-3 rounded-xl border-2 border-brand-600 bg-emerald-50/40 font-semibold text-sm text-[#1B4332] flex flex-col items-center justify-center">
+                        <button type="button" onclick="setPets(1)" id="pet-1" class="pet-btn py-2.5 px-3 rounded-xl border-2 border-slate-200 font-semibold text-sm text-slate-600 hover:border-slate-300 flex flex-col items-center justify-center">
                             <span>1 Perro</span>
                             <span id="txt-calc-pet1-sub" data-editable="true" class="text-[10px] font-medium text-slate-500 mt-0.5">Tarifa base (100%)</span>
                         </button>
@@ -1037,7 +1080,7 @@
                             <span>2 Perros</span>
                             <span id="pet-2-sub" class="text-[10px] font-semibold text-brand-700 mt-0.5">-30% en perro extra (abona 70%)</span>
                         </button>
-                        <button type="button" onclick="setPets(3)" id="pet-3" class="pet-btn py-2.5 px-3 rounded-xl border-2 border-slate-200 font-semibold text-sm text-slate-600 hover:border-slate-300 flex flex-col items-center justify-center">
+                        <button type="button" onclick="setPets(3)" id="pet-3" class="pet-btn py-2.5 px-3 rounded-xl border-2 border-brand-600 bg-emerald-50/40 font-semibold text-sm text-[#1B4332] flex flex-col items-center justify-center">
                             <span>3 Perros</span>
                             <span id="pet-3-sub" class="text-[10px] font-semibold text-brand-700 mt-0.5">-30% c/extra (abonan 70% c/u)</span>
                         </button>
@@ -1054,7 +1097,7 @@
                         <span id="txt-calc-step3-sub" data-editable="true" class="text-[11px] font-medium text-slate-500">Servicio exclusivo en Luján de Cuyo</span>
                     </div>
                     <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
-                        <button type="button" onclick="setZone('my_barrio')" id="zone-my_barrio" class="text-left p-3.5 rounded-xl border-2 border-brand-600 bg-emerald-50/40 transition-all flex flex-col justify-between gap-2">
+                        <button type="button" onclick="setZone('my_barrio')" id="zone-my_barrio" class="text-left p-3.5 rounded-xl border-2 border-slate-200 hover:border-slate-300 transition-all flex flex-col justify-between gap-2">
                             <div>
                                 <div id="zone-my-barrio-title" class="font-bold text-[#1B4332] text-xs sm:text-sm">B° Solares de Gabrielli</div>
                                 <div id="txt-calc-z1-d" data-editable="true" class="text-[11px] text-slate-500 mt-0.5">Vecinos de mi mismo barrio en Luján</div>
@@ -1062,7 +1105,7 @@
                             <span id="txt-calc-z1-b" data-editable="true" class="text-[11px] font-bold text-emerald-800 bg-emerald-100 px-2 py-0.5 rounded-lg self-start">Sin cargo de traslado ($0)</span>
                         </button>
 
-                        <button type="button" onclick="setZone('other_lujan')" id="zone-other_lujan" class="text-left p-3.5 rounded-xl border-2 border-slate-200 hover:border-slate-300 transition-all flex flex-col justify-between gap-2">
+                        <button type="button" onclick="setZone('other_lujan')" id="zone-other_lujan" class="text-left p-3.5 rounded-xl border-2 border-brand-600 bg-emerald-50/40 transition-all flex flex-col justify-between gap-2">
                             <div>
                                 <div id="txt-calc-z2-t" data-editable="true" class="font-bold text-[#1B4332] text-xs sm:text-sm">Otro barrio de Luján</div>
                                 <div id="txt-calc-z2-d" data-editable="true" class="text-[11px] text-slate-500 mt-0.5">Dentro de Luján de Cuyo (hasta 15 min)</div>
@@ -1080,13 +1123,13 @@
                     </div>
 
                     <!-- Notice when "Otro barrio de Luján" is selected -->
-                    <div id="other-lujan-notice" class="mt-3 bg-amber-50 border border-amber-200 text-amber-900 rounded-2xl p-3.5 text-xs leading-relaxed flex items-start gap-2.5 hidden">
+                    <div id="other-lujan-notice" class="mt-3 bg-amber-50 border border-amber-200 text-amber-900 rounded-2xl p-3.5 text-xs leading-relaxed flex items-start gap-2.5">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="info" class="lucide lucide-info w-4 h-4 text-amber-600 shrink-0 mt-0.5"><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4"></path><path d="M12 8h.01"></path></svg>
                         <div id="other-lujan-notice-text">Enviá tu dirección exacta por WhatsApp para cotizar el adicional por traslado.</div>
                     </div>
 
                     <!-- Out of Zone Alert Banner -->
-                    <div id="out-of-zone-alert" class="mt-3 bg-rose-50 border border-rose-200 text-rose-900 rounded-2xl p-4 text-xs leading-relaxed hidden">
+                    <div id="out-of-zone-alert" class="hidden mt-3 bg-rose-50 border border-rose-200 text-rose-900 rounded-2xl p-4 text-xs leading-relaxed">
                         <div class="font-bold text-rose-800 flex items-center gap-1.5 text-sm mb-1">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="map-pin-off" class="lucide lucide-map-pin-off w-4 h-4 text-rose-600 shrink-0"><path d="M12.75 7.09a3 3 0 0 1 2.16 2.16"></path><path d="M17.072 17.072c-1.634 2.17-3.527 3.912-4.471 4.727a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 1.432-4.568"></path><path d="m2 2 20 20"></path><path d="M8.475 2.818A8 8 0 0 1 20 10c0 1.183-.31 2.377-.81 3.533"></path><path d="M9.13 9.13a3 3 0 0 0 3.74 3.74"></path></svg>
                             <span id="out-of-zone-title" data-editable="true">Zona fuera de cobertura</span>
@@ -1118,11 +1161,11 @@
                             <span id="multivisit-badge" class="hidden text-xs font-medium text-emerald-700 bg-emerald-50 px-2.5 py-0.5 rounded-lg"></span>
                         </div>
                         <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
-                            <button type="button" onclick="setVisitsPerDay(1)" id="vpd-1" class="text-left p-3 rounded-xl border-2 border-brand-600 bg-emerald-50/40 transition-all">
+                            <button type="button" onclick="setVisitsPerDay(1)" id="vpd-1" class="text-left p-3 rounded-xl border-2 border-slate-200 hover:border-slate-300 transition-all">
                                 <div class="font-bold text-[#1B4332] text-xs sm:text-sm">1 visita / día</div>
                                 <div id="txt-calc-vpd1-d" data-editable="true" class="text-[11px] text-slate-500 mt-0.5">Come 1 vez al día + agua y limpieza</div>
                             </button>
-                            <button type="button" onclick="setVisitsPerDay(2)" id="vpd-2" class="text-left p-3 rounded-xl border-2 border-slate-200 hover:border-slate-300 transition-all">
+                            <button type="button" onclick="setVisitsPerDay(2)" id="vpd-2" class="text-left p-3 rounded-xl border-2 border-brand-600 bg-emerald-50/40 transition-all">
                                 <div class="font-bold text-[#1B4332] text-xs sm:text-sm flex items-center justify-between">
                                     <span>2 visitas / día</span>
                                     <span class="text-[10px] bg-emerald-200/80 text-emerald-900 px-1.5 py-0.5 rounded font-bold">Ideal</span>
@@ -1140,18 +1183,18 @@
                     <div class="pt-3 border-t border-slate-100">
                         <label id="txt-calc-step5" data-editable="true" class="block text-sm font-bold text-[#1B4332] mb-2.5">5. ¿Qué incluye cada visita a domicilio?</label>
                         <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
-                            <button type="button" onclick="setVacationWalkMode('none')" id="vmode-none" class="text-left p-3 rounded-xl border-2 border-slate-200 hover:border-slate-300 transition-all flex flex-col justify-between gap-1.5">
+                            <button type="button" onclick="setVacationWalkMode('none')" id="vmode-none" class="text-left p-3 rounded-xl border-2 border-brand-600 bg-emerald-50/40 transition-all flex flex-col justify-between gap-1.5">
                                 <div>
                                     <div id="txt-calc-vm1-t" data-editable="true" class="font-bold text-[#1B4332] text-xs sm:text-sm">Solo Comida y Cuidado</div>
-                                    <div id="txt-calc-vm1-d" data-editable="true" class="text-[11px] text-slate-500 mt-0.5">Comida, agua fresca y compañía en casa/patio</div>
+                                    <div id="txt-calc-vm1-d" data-editable="true" class="text-[11px] text-slate-500 mt-0.5">Comida, agua y compañía en casa/patio</div>
                                 </div>
                                 <span class="text-[10px] font-bold text-slate-600 bg-slate-100 px-2 py-0.5 rounded self-start">Sin paseo en calle</span>
                             </button>
 
-                            <button type="button" onclick="setVacationWalkMode('walk30')" id="vmode-walk30" class="text-left p-3 rounded-xl border-2 border-brand-600 bg-emerald-50/40 transition-all flex flex-col justify-between gap-1.5">
+                            <button type="button" onclick="setVacationWalkMode('walk30')" id="vmode-walk30" class="text-left p-3 rounded-xl border-2 border-slate-200 hover:border-slate-300 transition-all flex flex-col justify-between gap-1.5">
                                 <div>
                                     <div id="txt-calc-vm2-t" data-editable="true" class="font-bold text-[#1B4332] text-xs sm:text-sm">Cuidado + Paseo 30 min</div>
-                                    <div id="txt-calc-vm2-d" data-editable="true" class="text-[11px] text-slate-500 mt-0.5">Comida&nbsp; + caminata de <strong>media hora</strong></div>
+                                    <div id="txt-calc-vm2-d" data-editable="true" class="text-[11px] text-slate-500 mt-0.5">Comida + caminata de <strong>media hora</strong></div>
                                 </div>
                                 <span id="vmode-walk30-plus" class="text-[10px] font-bold text-brand-700 bg-emerald-100 px-2 py-0.5 rounded self-start">+$3.000/paseo</span>
                             </button>
@@ -1166,7 +1209,7 @@
                         </div>
 
                         <!-- Selector de cantidad de paseos dentro de las vacaciones -->
-                        <div id="vacation-walks-count-box" class="mt-3 bg-[#F7F3EB] border border-[#1B4332]/15 rounded-2xl p-3.5 space-y-2.5">
+                        <div id="vacation-walks-count-box" class="hidden mt-3 bg-[#F7F3EB] border border-[#1B4332]/15 rounded-2xl p-3.5 space-y-2.5">
                             <div class="flex flex-wrap items-center justify-between gap-2">
                                 <div>
                                     <label for="vacation-walks-input" class="text-xs sm:text-sm font-bold text-[#1B4332]">¿Cuántos paseos querés incluir en toda la estadía?</label>
@@ -1174,7 +1217,7 @@
                                 </div>
                                 <div class="flex items-center gap-1.5">
                                     <button type="button" onclick="adjustVacationWalkCount(-1)" class="w-8 h-8 rounded-lg bg-white border border-[#1B4332]/20 hover:bg-slate-50 font-bold text-[#1B4332] flex items-center justify-center">−</button>
-                                    <input type="number" id="vacation-walks-input" min="1" max="10" value="5" oninput="setVacationWalkCount(this.value)" class="w-14 text-center font-bold text-brand-700 bg-white border border-brand-600/40 rounded-lg py-1 text-sm focus:outline-none focus:border-brand-600">
+                                    <input type="number" id="vacation-walks-input" min="1" max="60" value="5" oninput="setVacationWalkCount(this.value)" class="w-14 text-center font-bold text-brand-700 bg-white border border-brand-600/40 rounded-lg py-1 text-sm focus:outline-none focus:border-brand-600">
                                     <button type="button" onclick="adjustVacationWalkCount(1)" class="w-8 h-8 rounded-lg bg-white border border-[#1B4332]/20 hover:bg-slate-50 font-bold text-[#1B4332] flex items-center justify-center">+</button>
                                 </div>
                             </div>
@@ -1256,10 +1299,10 @@
                     <div>
                         <div id="calc-summary-title" class="text-xs text-slate-400 uppercase tracking-wider font-semibold">Total Estimado por Semana</div>
                         <div class="flex flex-wrap items-baseline gap-2 mt-1">
-                            <span id="calc-weekly-total" class="text-3xl font-extrabold text-white">$7.000</span>
-                            <span class="text-xs text-amber-400 font-medium hidden" id="calc-discount-badge"></span>
+                            <span id="calc-weekly-total" class="text-3xl font-extrabold text-white">$8.500 + Traslado</span>
+                            <span class="text-xs text-emerald-400 font-medium" id="calc-discount-badge">-30% en perro extra</span>
                         </div>
-                        <div id="calc-sub-details" class="text-xs text-slate-300 mt-1">Por paseo: <strong id="calc-per-session">$7.000</strong> · Mensual (4 sem): <strong id="calc-monthly-total">$28.000</strong></div>
+                        <div id="calc-sub-details" class="text-xs text-slate-300 mt-1">Por paseo: <strong id="calc-per-session">$8.500</strong> (+ traslado según calle) · Mensual (4 sem): <strong id="calc-monthly-total">$34.000</strong></div>
                     </div>
                     <button id="btn-calc-edit-rates" type="button" onclick="toggleAdminMode()" class="text-xs text-slate-300 hover:text-white underline self-start sm:self-center shrink-0 hidden">
                         Editar tarifas base
@@ -1287,16 +1330,16 @@
 
                     <div class="space-y-3">
                         <div>
-                            <label id="pet-details-1-label" data-editable="true" class="block text-xs font-semibold text-slate-700 mb-1">Nombre y Raza *</label>
+                            <label id="pet-details-1-label" data-editable="true" class="block text-xs font-semibold text-slate-700 mb-1">Nombre y Raza del 1° perro *</label>
                             <input type="text" id="pet-details" required="" placeholder="Ej: Thor (Golden)" class="w-full rounded-xl border border-slate-300 px-3.5 py-2.5 text-slate-800 focus:outline-none focus:border-brand-600">
                         </div>
-                        <div id="pet-details-2-wrap" class="hidden">
+                        <div id="pet-details-2-wrap" class="">
                             <label class="block text-xs font-semibold text-slate-700 mb-1">Nombre y Raza del 2° perro *</label>
-                            <input type="text" id="pet-details-2" placeholder="Ej: Luna (Labrador)" class="w-full rounded-xl border border-slate-300 px-3.5 py-2.5 text-slate-800 focus:outline-none focus:border-brand-600">
+                            <input type="text" id="pet-details-2" placeholder="Ej: Luna (Labrador)" class="w-full rounded-xl border border-slate-300 px-3.5 py-2.5 text-slate-800 focus:outline-none focus:border-brand-600" required="">
                         </div>
-                        <div id="pet-details-3-wrap" class="hidden">
+                        <div id="pet-details-3-wrap" class="">
                             <label class="block text-xs font-semibold text-slate-700 mb-1">Nombre y Raza del 3° perro *</label>
-                            <input type="text" id="pet-details-3" placeholder="Ej: Rocco (Caniche)" class="w-full rounded-xl border border-slate-300 px-3.5 py-2.5 text-slate-800 focus:outline-none focus:border-brand-600">
+                            <input type="text" id="pet-details-3" placeholder="Ej: Rocco (Caniche)" class="w-full rounded-xl border border-slate-300 px-3.5 py-2.5 text-slate-800 focus:outline-none focus:border-brand-600" required="">
                         </div>
                     </div>
 
@@ -1318,12 +1361,12 @@
                         <pre id="whatsapp-preview" class="text-xs text-slate-700 whitespace-pre-wrap font-sans leading-relaxed">¡Hola! Soy [Tu Nombre].
 Estuve viendo tu página y quería consultar disponibilidad para:
 
-🐾 *Mascota(s):* [Nombre y Raza] (1 mascota)
-📍 *Ubicación:* B° Solares de Gabrielli
-🐕 *Servicio:* Paseo 60 min
+🐾 *Mascota(s):* [Nombre y Raza], [2° Perro] y [3° Perro] (3 mascotas)
+📍 *Ubicación:* Otro barrio (enviar ubicación exacta)
+🐕 *Servicio:* Paseo 30 min
 📅 *Frecuencia:* 1 día(s) por semana
 
-💰 *Cotización base:* $7.000 / semana ($7.000 por paseo).
+💰 *Cotización base:* $8.500 / semana ($8.500 por paseo) + adicional de traslado a confirmar según dirección.
 ¿Me confirmás disponibilidad para coordinar una entrevista previa?</pre>
                     </div>
 
@@ -1356,9 +1399,9 @@ Estuve viendo tu página y quería consultar disponibilidad para:
             <div class="bg-white border border-[#C7C0B3]/40 rounded-2xl overflow-hidden shadow-sm">
                 <button type="button" onclick="toggleFaqItem(1)" class="w-full text-left px-5 py-4 flex items-center justify-between gap-3 font-bold text-[#1B4332] text-sm sm:text-base hover:bg-slate-50/80 transition">
                     <span id="txt-faq-q1" data-editable="true">¿Cómo coordinamos las llaves y las indicaciones si me voy de vacaciones?</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="chevron-down" id="icon-faq-1" class="lucide lucide-chevron-down w-5 h-5 text-brand-600 shrink-0 transition-transform duration-200"><path d="m6 9 6 6 6-6"></path></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="chevron-down" id="icon-faq-1" class="lucide lucide-chevron-down w-5 h-5 text-brand-600 shrink-0 transition-transform duration-200" style="transform: rotate(0deg);"><path d="m6 9 6 6 6-6"></path></svg>
                 </button>
-                <div id="ans-faq-1" class="hidden px-5 pb-4 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+                <div id="ans-faq-1" class="px-5 pb-4 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3 hidden">
                     <p id="txt-faq-a1" data-editable="true">Antes de tu viaje hacemos una entrevista previa sin cargo en tu casa. Ahí conozco a tu mascota, me mostrás dónde queda su comida, agua y probamos las llaves para que te vayas 100% tranquilo.</p>
                 </div>
             </div>
@@ -1367,9 +1410,9 @@ Estuve viendo tu página y quería consultar disponibilidad para:
             <div class="bg-white border border-[#C7C0B3]/40 rounded-2xl overflow-hidden shadow-sm">
                 <button type="button" onclick="toggleFaqItem(2)" class="w-full text-left px-5 py-4 flex items-center justify-between gap-3 font-bold text-[#1B4332] text-sm sm:text-base hover:bg-slate-50/80 transition">
                     <span id="txt-faq-q2" data-editable="true">¿Qué pasa los días de mucho calor en Mendoza o si llueve?</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="chevron-down" id="icon-faq-2" class="lucide lucide-chevron-down w-5 h-5 text-brand-600 shrink-0 transition-transform duration-200"><path d="m6 9 6 6 6-6"></path></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="chevron-down" id="icon-faq-2" class="lucide lucide-chevron-down w-5 h-5 text-brand-600 shrink-0 transition-transform duration-200" style="transform: rotate(0deg);"><path d="m6 9 6 6 6-6"></path></svg>
                 </button>
-                <div id="ans-faq-2" class="hidden px-5 pb-4 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+                <div id="ans-faq-2" class="px-5 pb-4 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3 hidden">
                     <p id="txt-faq-a2" data-editable="true">En verano priorizamos horarios temprano por la mañana o a la tardecita para cuidar las almohadillas de sus patas del asfalto caliente. Si llueve fuerte, reprogramamos el paseo.</p>
                 </div>
             </div>
@@ -1378,10 +1421,10 @@ Estuve viendo tu página y quería consultar disponibilidad para:
             <div class="bg-white border border-[#C7C0B3]/40 rounded-2xl overflow-hidden shadow-sm">
                 <button type="button" onclick="toggleFaqItem(3)" class="w-full text-left px-5 py-4 flex items-center justify-between gap-3 font-bold text-[#1B4332] text-sm sm:text-base hover:bg-slate-50/80 transition">
                     <span id="txt-faq-q3" data-editable="true">¿Los paseos son individuales o llevás muchos perros juntos?</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="chevron-down" id="icon-faq-3" class="lucide lucide-chevron-down w-5 h-5 text-brand-600 shrink-0 transition-transform duration-200"><path d="m6 9 6 6 6-6"></path></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="chevron-down" id="icon-faq-3" class="lucide lucide-chevron-down w-5 h-5 text-brand-600 shrink-0 transition-transform duration-200" style="transform: rotate(0deg);"><path d="m6 9 6 6 6-6"></path></svg>
                 </button>
-                <div id="ans-faq-3" class="hidden px-5 pb-4 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
-                    <p id="txt-faq-a3" data-editable="true">No trabajo con manadas grandes. Los paseos son individuales (o con los perros de tu mismo hogar) para darle atención real, evitar peleas o tirones y adaptarme al ritmo de tu perro.</p>
+                <div id="ans-faq-3" class="px-5 pb-4 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3 hidden">
+                    <p id="txt-faq-a3" data-editable="true">Los paseos son individuales (o con los perros de tu mismo hogar) para darle atención real, evitar peleas o tirones y adaptarme al ritmo de tu perro.</p>
                 </div>
             </div>
 
@@ -1389,9 +1432,9 @@ Estuve viendo tu página y quería consultar disponibilidad para:
             <div class="bg-white border border-[#C7C0B3]/40 rounded-2xl overflow-hidden shadow-sm">
                 <button type="button" onclick="toggleFaqItem(4)" class="w-full text-left px-5 py-4 flex items-center justify-between gap-3 font-bold text-[#1B4332] text-sm sm:text-base hover:bg-slate-50/80 transition">
                     <span id="txt-faq-q4" data-editable="true">¿Cuáles son las formas de pago y cuándo se abona?</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="chevron-down" id="icon-faq-4" class="lucide lucide-chevron-down w-5 h-5 text-brand-600 shrink-0 transition-transform duration-200"><path d="m6 9 6 6 6-6"></path></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="chevron-down" id="icon-faq-4" class="lucide lucide-chevron-down w-5 h-5 text-brand-600 shrink-0 transition-transform duration-200" style="transform: rotate(0deg);"><path d="m6 9 6 6 6-6"></path></svg>
                 </button>
-                <div id="ans-faq-4" class="hidden px-5 pb-4 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+                <div id="ans-faq-4" class="px-5 pb-4 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3 hidden">
                     <p id="txt-faq-a4" data-editable="true">Podés abonar por transferencia bancaria (Alias/CBU) o en efectivo. En paseos semanales podés abonar por semana o por día, y en cuidado por vacaciones coordinamos una seña o pago al finalizar el período.</p>
                 </div>
             </div>
@@ -1440,7 +1483,7 @@ Estuve viendo tu página y quería consultar disponibilidad para:
     <!-- APPLICATION LOGIC                          -->
     <!-- ========================================== -->
     <script>
-        const STORAGE_KEY = 'mateo_petcare_settings_1795728273641';
+        const STORAGE_KEY = 'mateo_petcare_settings_1795741395711';
         let DEFAULT_HERO_PHOTO_SRC = '';
 
         const THEME_PALETTES = {
@@ -1506,13 +1549,36 @@ Estuve viendo tu página y quería consultar disponibilidad para:
                     "waPriceNote": "+ adicional de traslado a confirmar según dirección",
                     "adminPin": "perrosmateo123"
           },
-          "photos": [],
+          "photos": [
+                    {
+                              "id": "p-1795741328519",
+                              "url": "akim.jpeg",
+                              "caption": "Akim",
+                              "tag": "Paseos"
+                    },
+                    {
+                              "id": "p-1795741264312",
+                              "url": "rufi.jpeg",
+                              "caption": "Rufi",
+                              "tag": "Paseos"
+                    },
+                    {
+                              "id": "p-1795741137967",
+                              "url": "fiore, mara y juli.jpeg",
+                              "caption": "Fiore, Mara y Juli",
+                              "tag": "Paseos y cuidado"
+                    },
+                    {
+                              "id": "p-1795740779383",
+                              "url": "jero y uma.jpeg",
+                              "caption": "Jero y Uma",
+                              "tag": "Paseos y cuidado"
+                    }
+          ],
           "reviews": [],
           "texts": {
                     "txt-hero-title": "\n                    Paseo y cuidado a domicilio para tu perro en <span class=\"text-brand-600\">Luján de Cuyo.</span>\n                ",
-                    "txt-hero-desc": "\n                    Sin manadas, horarios fijos y reporte diario con fotos por WhatsApp.\n                ",
-                    "txt-c1-b3": "Buena opción para perros más tranquilos.",
-                    "txt-c2-b3": "Ideal para perros con mucha energía acumulada.",
+                    "txt-hero-desc": "\n                    Paseos individuales, horarios flexibles y reporte diario con fotos por WhatsApp.\n                ",
                     "txt-float-wa": "Consulta rápida",
                     "txt-brand-name": "Mateo",
                     "txt-brand-city": "Luján de Cuyo",
@@ -1527,32 +1593,34 @@ Estuve viendo tu página y quería consultar disponibilidad para:
                     "txt-rep-foot": "Puerta verificada al salir",
                     "txt-rep-photo-badge": "Vía WhatsApp",
                     "txt-serv-kicker": "Servicios",
-                    "txt-serv-heading": "Tres modalidades, cero vueltas.",
+                    "txt-serv-heading": "Tres modalidades",
                     "txt-serv-sub": "\n                    Entrevista previa sin cargo antes de empezar.\n                ",
                     "txt-c1-title": "Paseo de 30 Minutos",
                     "txt-c1-desc": "\n                            Ideal para cachorros, razas pequeñas o cortar la jornada.\n                        ",
                     "txt-c1-b1": "<strong>30 minutos</strong> reales de caminata continua.",
                     "txt-c1-b2": "Paseo individual o con compañero compatible.",
+                    "txt-c1-b3": "Buena opción para perros más tranquilos.",
                     "txt-c2-title": "Paseo de 60 Minutos",
                     "txt-c2-desc": "\n                            Desgaste físico completo para perros medianos y grandes.\n                        ",
-                    "txt-c2-b1": "<strong>60 minutos</strong> de ejercicio y olfateo guiado.",
-                    "txt-c2-b2": "Sin manadas masivas: control y correa segura.",
+                    "txt-c2-b1": "<strong>60 minutos</strong> de ejercicio y olfateo.",
+                    "txt-c2-b2": "Paseo individual, control y correa segura.",
+                    "txt-c2-b3": "Ideal para perros con mucha energía.",
                     "txt-c3-title": "Cuidado por Vacaciones",
                     "txt-c3-desc": "\n                            Visitas diarias a tu casa mientras viajás, sin sacar a tu perro de su entorno.\n                        ",
-                    "txt-c3-b1": "<strong>1, 2 o 3 visitas diarias</strong> según cuántas veces coma.",
+                    "txt-c3-b1": "<strong>1, 2 o 3 visitas diarias</strong> según cuántas veces se alimente.",
                     "txt-c3-b2": "Opción de cuidado en casa/patio o con paseo (30 o 60m).",
                     "txt-c3-b3": "Reporte en cada visita y seguimiento por WhatsApp.",
                     "txt-met-kicker": "Cómo trabajo",
                     "txt-met-title": "Orden, puntualidad y trato directo.",
                     "txt-met-desc": "\n                    Estudiante de Ingeniería Industrial y vecino de Luján de Cuyo.\n                ",
-                    "txt-m1-t": "01. Entrevista Previa",
+                    "txt-m1-t": "01. Entrevista previa",
                     "txt-m1-d": "\n                        Visita previa sin costo en tu casa para conocernos.\n                    ",
-                    "txt-m2-t": "02. Cero Manadas",
-                    "txt-m2-d": "\n                        Paseos individuales o en dupla compatible, nunca manadas.\n                    ",
-                    "txt-m3-t": "03. Horarios Fijos",
-                    "txt-m3-d": "\n                        Franja horaria fija y puntualidad estricta cada semana.\n                    ",
-                    "txt-m4-t": "04. Registro Transparente",
-                    "txt-m4-d": "\n                        Fotos y confirmación por WhatsApp al terminar cada visita.\n                    ",
+                    "txt-m2-t": "02. Paseos individuales",
+                    "txt-m2-d": "\n                        Cada perro disfruta de su paseo por separado.",
+                    "txt-m3-t": "03. Horarios flexibles",
+                    "txt-m3-d": "Acordamos previamente los horarios según disponibilidad.",
+                    "txt-m4-t": "04. Seguimiento",
+                    "txt-m4-d": "\n                        Fotos y novedades por WhatsApp al terminar cada visita.\n                    ",
                     "txt-gal-kicker": "Experiencia",
                     "txt-gal-title": "Perros que ya paseé y cuidé",
                     "txt-gal-sub": "Mascotas de vecinos de Luján de Cuyo.",
@@ -1589,15 +1657,15 @@ Estuve viendo tu página y quería consultar disponibilidad para:
                     "txt-calc-vpd3-d": "Mañana, Mediodía y Noche (Cachorros/Rutina)",
                     "txt-calc-step5": "5. ¿Qué incluye cada visita a domicilio?",
                     "txt-calc-vm1-t": "Solo Comida y Cuidado",
-                    "txt-calc-vm1-d": "Comida, agua fresca y compañía en casa/patio",
+                    "txt-calc-vm1-d": "Comida, agua y compañía en casa/patio",
                     "txt-calc-vm2-t": "Cuidado + Paseo 30 min",
-                    "txt-calc-vm2-d": "Comida&nbsp; + caminata de <strong>media hora</strong>",
+                    "txt-calc-vm2-d": "Comida + caminata de <strong>media hora</strong>",
                     "txt-calc-vm3-t": "Cuidado + Paseo 60 min",
                     "txt-calc-vm3-d": "Comida + caminata de <strong>1 hora completa</strong>",
                     "txt-form-title": "Completar Datos para Coordinar",
                     "txt-form-sub": "Genera el mensaje listo con tu cotización",
                     "txt-lbl-name": "Tu Nombre *",
-                    "pet-details-1-label": "Nombre y Raza *",
+                    "pet-details-1-label": "Nombre y Raza del 1° perro *",
                     "txt-lbl-dates": "Fechas Seleccionadas en el Calendario",
                     "txt-btn-send-wa": "Enviar Consulta por WhatsApp",
                     "txt-faq-kicker": "Dudas Comunes",
@@ -1608,7 +1676,7 @@ Estuve viendo tu página y quería consultar disponibilidad para:
                     "txt-faq-q2": "¿Qué pasa los días de mucho calor en Mendoza o si llueve?",
                     "txt-faq-a2": "En verano priorizamos horarios temprano por la mañana o a la tardecita para cuidar las almohadillas de sus patas del asfalto caliente. Si llueve fuerte, reprogramamos el paseo.",
                     "txt-faq-q3": "¿Los paseos son individuales o llevás muchos perros juntos?",
-                    "txt-faq-a3": "No trabajo con manadas grandes. Los paseos son individuales (o con los perros de tu mismo hogar) para darle atención real, evitar peleas o tirones y adaptarme al ritmo de tu perro.",
+                    "txt-faq-a3": "Los paseos son individuales (o con los perros de tu mismo hogar) para darle atención real, evitar peleas o tirones y adaptarme al ritmo de tu perro.",
                     "txt-faq-q4": "¿Cuáles son las formas de pago y cuándo se abona?",
                     "txt-faq-a4": "Podés abonar por transferencia bancaria (Alias/CBU) o en efectivo. En paseos semanales podés abonar por semana o por día, y en cuidado por vacaciones coordinamos una seña o pago al finalizar el período.",
                     "txt-footer-main": "<strong>Paseo y Cuidado de Mascotas</strong> · Luján de Cuyo, Mendoza",
@@ -3394,6 +3462,22 @@ Estuve viendo tu página y quería consultar disponibilidad para:
         }
 
         // Initialize immediately (no waiting for external images/CDNs)
+
+        function handleBookingSubmit(e) {
+            if (e) e.preventDefault();
+            const phone = (state.design && state.design.whatsapp) ? String(state.design.whatsapp).replace(/[^0-9]/g, '') : '5492615586074';
+            const quoteInfo = calculateQuote();
+            const previewEl = document.getElementById('whatsapp-preview');
+            const msg = previewEl ? previewEl.textContent.trim() : updateWhatsAppPreview(
+                quoteInfo.totalCost || 0,
+                quoteInfo.finalSessionCost || 0,
+                Boolean(quoteInfo.isVacation)
+            );
+            const url = `https://wa.me/${phone}?text=${encodeURIComponent(msg)}`;
+            window.open(url, '_blank', 'noopener,noreferrer');
+            showToast('Abriendo WhatsApp con tu consulta');
+        }
+
         function initApp() {
             const coverImgEl = document.getElementById('hero-cover-img');
             if (coverImgEl && coverImgEl.getAttribute('src')) {
